@@ -2,14 +2,21 @@ package com.hyeon.makingtripback.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.time.LocalDateTime;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class CheckItem {
 
   @Id
@@ -25,9 +32,7 @@ public class CheckItem {
 
   private boolean state;
 
-  @CreationTimestamp
   private LocalDateTime createdAt;
 
-  @UpdateTimestamp
   private LocalDateTime updatedAt;
 }

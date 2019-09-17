@@ -1,15 +1,11 @@
 package com.hyeon.makingtripback.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -37,12 +33,8 @@ public class ScheduleDetail {
 
   private Long sequence;
 
-  @CreationTimestamp
-  @Column(name = "created_at", updatable = false)
   private LocalDateTime createdAt;
 
-  @UpdateTimestamp
-  @Column(name = "updated_at")
   private LocalDateTime updatedAt;
 
 }
