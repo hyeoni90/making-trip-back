@@ -1,7 +1,6 @@
 package com.hyeon.makingtripback.model;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,23 +13,16 @@ import lombok.Setter;
 @Setter
 @Entity
 @NoArgsConstructor
-public class MyTrip {
+public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
-  private Long userId;
-
-  private String name;
-
-  private String place;
-
-  private Date departureAt;
-
-  private Date arrivalAt;
-
+  private String email;
+  private String password;
+  private String nickname;
   private LocalDateTime createdAt;
-
   private LocalDateTime updatedAt;
+
+
 }
