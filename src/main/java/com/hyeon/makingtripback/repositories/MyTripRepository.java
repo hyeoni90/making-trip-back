@@ -11,4 +11,7 @@ public interface MyTripRepository extends CrudRepository<MyTrip, Long> {
   List<MyTrip> findAll();
 
   List<MyTrip> findAllByUserIdOrderByCreatedAtDesc(Long userId);
+
+  List<MyTrip> findMyTripsByUserIdOrderByIdDesc(Long userId);
+
 }

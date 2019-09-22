@@ -25,4 +25,8 @@ public class MyTripService {
   public List<MyTrip> getMyTripByUser(Long userId) {
     return myTripRepository.findAllByUserIdOrderByCreatedAtDesc(userId);
   }
+
+  public MyTrip save(MyTrip myTrip) {
+    return myTripRepository.save(myTrip);
+  }
 }

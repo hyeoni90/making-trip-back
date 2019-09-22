@@ -3,11 +3,8 @@ package com.hyeon.makingtripback.controller;
 import com.hyeon.makingtripback.model.MyTrip;
 import com.hyeon.makingtripback.service.MyTripService;
 import java.util.List;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/trip")
@@ -32,6 +29,10 @@ public class MyTripController {
   @GetMapping("/user")
   public List<MyTrip> getMyTripByUserId(@RequestParam Long userId) {
     return myTripService.getMyTripByUser(userId);
+  }
 
+  @PostMapping("/add")
+  public MyTrip addMyTrip(MyTrip myTrip) {
+    return myTripService.save(myTrip);
   }
 }
